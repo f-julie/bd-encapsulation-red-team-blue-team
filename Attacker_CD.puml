@@ -1,0 +1,19 @@
+@startuml
+
+class PaymentSelectorTest {
+    <<general tests>>()
+    attack...() tests
+}
+class Attacker {
+    depleteFirstInstrumentFunds()
+    <<other attack methods>>()
+}
+class PaymentSelector {
+    (see other diagram)
+}
+
+PaymentSelectorTest o- Attacker
+PaymentSelectorTest o-- "customer1-\nSelector" PaymentSelector
+PaymentSelectorTest o-- "customer2-\nSelector" PaymentSelector
+
+@enduml
