@@ -15,8 +15,8 @@ No RDE workflows for this activity. You should manually run the tests you are ad
    Many systems will call `PaymentSelector::getPreferredPaymentInstrument()` to determine how to pay for an order for
    a particular customer. It uses `CustomerPaymentInstruments` to select the appropriate payment method.
 
-1. **PaymentSelector call stack:** Read the code in the ATAClassroomSnippets_U1 brazil package,
-   `encapsulation.classroom` java package, starting with `PaymentSelector`, tracing through the method calls
+1. **PaymentSelector call stack:** Read the code in the com.amazon.ata package,
+   `encapsulation` java package, starting with `PaymentSelector`, tracing through the method calls
    from `getPreferredPaymentInstrument`. Be prepared to answer questions about what each class is responsible for.
 
 1. **Diving Deeper:** Look at `CustomerPaymentInstruments` and `PaymentInstruments` in particular.
@@ -41,7 +41,7 @@ No RDE workflows for this activity. You should manually run the tests you are ad
 #### Plan of Attack!
 
 1. Your job here is to implement methods in `Attacker` that exploit the poor encapsulation of the classes in the
-   `com.amazon.ata.encapulation.classroom.model` package. The
+   `com.amazon.ata.encapulation.model` package. The
    `PaymentSelectorTest` class will make use of these methods to
    cause trouble.
 
@@ -57,7 +57,7 @@ No RDE workflows for this activity. You should manually run the tests you are ad
 #### Sample
 
 We've done the first one for you! Go to the `PaymentSelectorTest` class
-under tst/com/amazon/ata/encapsulation/classroom/service and run
+under tst/com/amazon/ata/encapsulation/service and run
 the unit tests. You should see that
 `attackGetPreferredPaymentInstrument_whenAttackTriesToDecreaseAvailableFunds_returnsOriginalInstrument`
 is already failing with a message that includes "RED TEAM" in it.
