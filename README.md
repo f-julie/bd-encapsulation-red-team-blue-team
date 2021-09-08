@@ -1,12 +1,5 @@
 ### Activity 1 : RED TEAM
 
-**Branch name:** encapsulation-classroom
-
-(Use this in the Coding Activity Instructions to create the branch to work on for this activity)
-
-**RDE workflows:**
-No RDE workflows for this activity. You should manually run the tests you are adding in IntelliJ.
-
 #### Preliminaries: getting the lay of the land
 
 1. **UML Diagram:** Examine the payment system class diagram along with the instructor.
