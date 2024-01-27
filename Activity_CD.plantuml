@@ -1,0 +1,38 @@
+@startuml
+title [[https://tiny.amazon.com/1dm4hwvfw/EncapsulationClassroomActivity Encapsulation Classroom Activity]]
+
+class CustomerPaymentInstruments {
+  +getCustomerId() : String
+  +getCustomerName() : String
+  +getPaymentInstruments() : PaymentInstrument[]
+}
+class PaymentInstrument {
+  +getInstrumentId() : String
+  +getAvailableFunds() : BigDecimal
+  +setAvailableFunds(amount : BigDecimal) : void
+  +getInstrumentType() : int
+  +setInstrumentType(type : int) : void
+  +equals(obj : Object) : boolean
+}
+
+class PaymentSelector {
+  +getPreferredPaymentInstrument(orderTotal : BigDecimal) : PaymentInstrument
+}
+
+package ATACurriculum_LessonPlanResources #DDDDDD {
+  enum PaymentInstrumentType<<enumeration>> #DDDDDD {
+    +GIFT_CARD
+    +CREDIT_CARD
+  }
+
+  class Customer #DDDDDD {
+    +getId() : String
+    +getName() : String
+  }
+}
+
+PaymentInstrument "1" *-down- "1" PaymentInstrumentType
+CustomerPaymentInstruments "1" *-down- "0..*" PaymentInstrument
+CustomerPaymentInstruments "1" o-down- "1" Customer
+PaymentSelector "1" *-down- "1" CustomerPaymentInstruments
+@enduml
