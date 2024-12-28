@@ -33,6 +33,14 @@ public class CustomerPaymentInstruments {
     }
 
     public PaymentInstrument[] getPaymentInstruments() {
-        return paymentInstruments;
+        PaymentInstrument[] copies = new PaymentInstrument[paymentInstruments.length];
+        for (int i = 0; i < paymentInstruments.length; i++) {
+            //Shallow copy
+            //copies[i] = paymentInstruments[i];
+            copies[i] = new PaymentInstrument((paymentInstruments[i].getInstrumentId()));
+            copies[i].setInstrumentType((paymentInstruments[i].getInstrumentType()));
+            copies[i].setAvailableFunds(paymentInstruments[i].getAvailableFunds());
+        }
+        return copies;
     }
 }
